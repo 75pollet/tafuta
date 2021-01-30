@@ -1,7 +1,11 @@
 <section class="phx-hero">
   <table id="dashboard">
-  <head> </head>
+  <head>
+      Points: <%= @points %>
+   </head>
   <body>
+  <div>
+
   <%= for [a, b, c, d, e, f] <- @board do %>
   <tr class="row">
      <td id="c00"> <%= a %> </td>
@@ -12,6 +16,11 @@
      <td id="c04"><%= f %></td>
    </tr>
   <% end %>
+</div>
 </body>
 </table>
+<form phx-submit="submit">
+  <input name="word" type="text" value="<%= @answer %>" />
+  <button type="submit"> Submit </button>
+</form>
 </section>
